@@ -4,6 +4,7 @@
   "description": "Native SVG outline with source navigation and Explorer [] badges.",
   "version": "0.2.0",
   "publisher": "course-svg-team",
+  "repository": { "type": "git", "url": "https://github.com/Isaaaaaaaaaaaaaa/phase_cli_1.git", "directory": "extensions/vscode-svg" },
   "license": "MIT",
   "engines": { "vscode": "^1.100.0" },
   "main": "./dist/extension.js",

@@ -8,5 +8,7 @@ runTests({
   cachePath: path.join(os.tmpdir(), "course-lab2-vscode"),
   extensionDevelopmentPath: path.resolve(__dirname, ".."),
   extensionTestsPath: path.resolve(__dirname, "../dist/hostTests.js"),
-  launchArgs: ["--disable-workspace-trust", "--skip-welcome", "--skip-release-notes"],
+  launchArgs: ["--disable-workspace-trust", "--skip-welcome", "--skip-release-notes",
+    "--user-data-dir", path.join(os.tmpdir(), "course-lab2-vscode-tests-profile"),
+    "--extensions-dir", path.join(os.tmpdir(), "course-lab2-vscode-tests-extensions")],
 }).catch((error) => { console.error(error); process.exitCode = 1; });
