@@ -22,13 +22,13 @@ export class XmlOutlineParser {
         parser.position,
       );
       const parent = stack.at(-1);
-      if (parent) parent.children.push(node);
+      if (parent) parent.addChild(node);
       else roots.push(node);
       stack.push(node);
     });
     parser.on("closetag", () => {
       const node = stack.pop();
-      if (node) node.end = parser.position;
+      if (node) node.close(parser.position);
     });
     try { parser.write(source).close(); }
     catch { valid = false; }
