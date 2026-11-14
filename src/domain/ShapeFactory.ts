@@ -1,5 +1,5 @@
 import { EditorError } from "./EditorError.js";
-import type { Shape } from "./shapes/Shape.js";
+import { Shape } from "./shapes/Shape.js";
 import type { ExtensionRegistry } from "../extensions/ExtensionRegistry.js";
 
 export class ShapeFactory {
@@ -8,7 +8,7 @@ export class ShapeFactory {
     const provider = this.registry.shape(type);
     if (!provider) throw new EditorError(`unknown shape type: ${type} (is the plugin loaded?)`);
     const shape = provider.create(id, args);
-    if (shape.id !== id) throw new EditorError(`invalid shape provider result: ${type}`);
+    if (!(shape instanceof Shape) || shape.id !== id) throw new EditorError(`invalid shape provider result: ${type}`);
     return shape;
   }
   public fromSvg(tagName: string, attributes: Readonly<Record<string, string>>, text: string, children: readonly Shape[]): Shape {
@@ -18,7 +18,7 @@ export class ShapeFactory {
     if (!provider) throw new EditorError(`unsupported SVG element: ${tagName}`);
     if (!attributes.id) throw new EditorError(`missing id on <${tagName}>`);
     const shape = provider.hydrate(input);
-    if (shape.id !== attributes.id) throw new EditorError(`invalid shape provider result: ${provider.name}`);
+    if (!(shape instanceof Shape) || shape.id !== attributes.id) throw new EditorError(`invalid shape provider result: ${provider.name}`);
     return shape;
   }
 }

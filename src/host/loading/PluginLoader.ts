@@ -14,7 +14,11 @@ export class PluginLoader {
     const staged = new ExtensionRegistry();
     try {
       if (!manifest.name || typeof plugin.activate !== "function") throw new Error("invalid plugin contract");
-      plugin.activate(staged, options);
+      const activation: unknown = plugin.activate(staged, options);
+      if (activation instanceof Promise) {
+        void activation.catch(() => {});
+        throw new Error("activate must be synchronous");
+      }
       const declared = categories.map((category) => `${category}=${[...(manifest.contributes?.[category] ?? [])].sort().join(",")}`).join("; ");
       const registered = categories.map((category) => `${category}=${staged.names(category).join(",")}`).join("; ");
       if (declared !== registered) {

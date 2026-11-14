@@ -66,7 +66,17 @@ export class ExtensionRegistry implements PluginContext {
     }).filter((label): label is string => typeof label === "string" && label.length > 0);
     return labels.length ? ` ${labels.join(" ")}` : "";
   }
-  public observe(event: EditorEvent): void {
-    for (const decorator of this.tables.decorators.values()) decorator.observe?.({ ...event, document: event.document.clone() });
+  public observe(event: EditorEvent): readonly string[] {
+    const diagnostics: string[] = [];
+    for (const [name, decorator] of this.tables.decorators) {
+      try {
+        decorator.observe?.({ ...event, document: event.document.clone() });
+      } catch (error: unknown) {
+        this.tables.decorators.delete(name);
+        const reason = error instanceof Error ? error.message : String(error);
+        diagnostics.push(`error: decorator observer disabled: ${name} (${reason.replace(/[\r\n]+/gu, " ")})`);
+      }
+    }
+    return diagnostics;
   }
 }

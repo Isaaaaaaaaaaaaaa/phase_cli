@@ -5,5 +5,9 @@ coverage/
 !fixtures/*.svg
 !extensions/vscode-svg/examples/*.svg
 !doc/transcript/*.svg
+!docs/images/*.svg
 *.vsix
+.vscode-test/
+integrations/dsh-svg/lib/
+*.tgz
 .DS_Store

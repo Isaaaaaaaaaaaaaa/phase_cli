@@ -53,6 +53,17 @@ describe("plugin registration transaction", () => {
     } };
     expect(host.loader.install(staged, { name: "stage" })).toEqual(["error: duplicate registration: commands/sample"]);
   });
+  it("rejects async activation without publishing registrations or an unhandled rejection", async () => {
+    const host = new EditorHost();
+    const asynchronous = { async activate(context: PluginContext) {
+      context.registerCommand(new QueryContribution());
+      await Promise.resolve();
+      throw new Error("async failure");
+    } };
+    expect(host.loader.install(asynchronous as unknown as Plugin, { name: "async-plugin" })).toEqual(["error: plugin failed to activate: async-plugin (activate must be synchronous)"]);
+    await Promise.resolve();
+    expect(host.services.extensions.command("sample")).toBeUndefined();
+  });
 });
 
 describe("generic configuration loader", () => {

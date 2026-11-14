@@ -17,15 +17,15 @@ export class SvgEditor {
   public execute(command: EditorCommand): readonly string[] {
     if (command.category === "edit") {
       const output = this.history.execute(command as ReversibleCommand, this.session);
-      this.extensions?.observe({ kind: "edit", document: this.session.requireDocument() });
-      return output;
+      const diagnostics = this.extensions?.observe({ kind: "edit", document: this.session.requireDocument() }) ?? [];
+      return [...output, ...diagnostics];
     }
-    const output = command.execute(this.session);
+    const output = [...command.execute(this.session)];
     if (command.category === "io") {
       this.history.block((command as IoCommand).resetsHistory);
-      this.extensions?.observe({ kind: command.eventKind ?? "baseline", document: this.session.requireDocument() });
+      output.push(...this.extensions?.observe({ kind: command.eventKind ?? "baseline", document: this.session.requireDocument() }) ?? []);
     }
-    if (command.category === "history") this.extensions?.observe({ kind: "history", document: this.session.requireDocument() });
+    if (command.category === "history") output.push(...this.extensions?.observe({ kind: "history", document: this.session.requireDocument() }) ?? []);
     return output;
   }
 

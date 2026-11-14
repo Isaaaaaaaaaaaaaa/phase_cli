@@ -1,11 +1,12 @@
 {
   "name": "svg-editor-cli",
-  "version": "0.1.0",
-  "description": "An object-oriented SVG editor command-line application",
+  "version": "0.2.0",
+  "description": "A plugin-extensible SVG CLI with VSCode and DSH integrations",
   "type": "module",
   "files": [
     "dist",
-    "doc/README.md"
+    "doc",
+    "plugins.config.json"
   ],
   "bin": {
     "svg-editor": "dist/cli/SvgCli.js"
@@ -16,19 +17,26 @@
     "lint": "eslint src tests --no-error-on-unmatched-pattern",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
-    "check": "npm run lint && npm run build && npm run coverage"
+    "check": "npm run lint && npm run build && npm run coverage",
+    "test:vscode": "npm --prefix extensions/vscode-svg run test:host",
+    "test:dsh": "npm --prefix integrations/dsh-svg test",
+    "verify:assembly": "npm run build && node scripts/verify-assembly.mjs && node scripts/verify-ocp.mjs",
+    "metrics": "node scripts/metrics.mjs"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24.9.0"
   },
   "dependencies": {
     "@xmldom/xmldom": "0.9.12"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": { "minimatch": "11.0.1" }
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@types/node": "24.7.2",
     "@vitest/coverage-v8": "^4.1.12",
-    "eslint": "10.13.0",
+    "eslint": "10.15.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.71.2",
     "vitest": "^4.1.12"
