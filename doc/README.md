@@ -285,6 +285,7 @@ FileDecorationProvider 对 SVG 文件返回 `[]`，用 workspace.fs.stat 排除�
 - 发现基础 npm 锁文件出现新的 minimatch 公告，更新兼容工具版本并对 typescript-estree 单独使用修复版本，完整 lint 和审计复验。
 - DSH SDK 的 latest 标签与宿主不一致，没有盲目复制旧示例的 peer 范围；锁定实际测试的 SDK。
 - 修正 DSH 输出类型为可满足 lossless JSON 的对象类型，并适配 macOS realpath 的 `/private` 规范化。
+- 远程 Linux CI 发现 Mac 上生成的锁文件遗漏 WASI 所需的两个 emnapi 包；在没有 node_modules 的隔离环境，用 CI 的 npm 11.19.1 补全锁记录。所有已有包版本保持不变，干净 npm ci、36 个测试和审计再次通过。
 - 实际 UI 自动化发现异步输入/自动补括号影响复验，改为先清空并验证缓冲区，再输入；成功后恢复示例内容。
 
 模块自查：实际目录与上文一致，方案草案外层 kernel 目录未使用的差异已明确记录。依赖自查：插件只导入公开 API；内核不导入具体插件；加载器没有名字映射。新增 box/标签的历史差异由脚本验证，不能只凭空搜索结果认定合规。
