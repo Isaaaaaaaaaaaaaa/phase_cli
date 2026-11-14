@@ -24,6 +24,7 @@ export class EditorSession {
   public get currentPath(): string | undefined {
     return this.sourcePath;
   }
+  public get currentDocument(): SvgDocument | undefined { return this.document; }
 
   public set currentPath(path: string | undefined) {
     this.sourcePath = path;

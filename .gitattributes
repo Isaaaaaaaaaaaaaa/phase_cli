@@ -1,0 +1,2 @@
+# Expected transcripts retain the CLI prompt's intentional final space.
+doc/transcript/*.expected.txt -whitespace

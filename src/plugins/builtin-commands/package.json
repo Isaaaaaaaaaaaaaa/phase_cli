@@ -1,0 +1,6 @@
+{
+  "name": "@svgframe/builtin-commands",
+  "type": "module",
+  "main": "../../../dist/plugins/builtin-commands/BuiltinCommandsPlugin.js",
+  "contributes": { "commands": ["init", "read", "save", "canvas", "create", "delete", "move", "scale", "set", "group", "ungroup", "addto", "front", "back", "tree", "show", "help", "undo", "redo"] }
+}

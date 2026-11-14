@@ -1,18 +1,11 @@
 #!/usr/bin/env node
+import { EditorHost } from "../host/EditorHost.js";
+import { CodeAssembly } from "../host/CodeAssembly.js";
 
-import { SvgEditor } from "../application/SvgEditor.js";
-import { ShapeFactory } from "../domain/ShapeFactory.js";
-import { FileSvgRepository } from "../infrastructure/FileSvgRepository.js";
-import { CommandFactory } from "./CommandFactory.js";
-import { SvgCliApplication } from "./SvgCliApplication.js";
-
-const shapeFactory = new ShapeFactory();
-const repository = new FileSvgRepository(shapeFactory);
-const editor = new SvgEditor();
-const commandFactory = new CommandFactory(
-  shapeFactory,
-  repository,
-  editor.historyManager,
-);
-
-new SvgCliApplication(editor, commandFactory).run();
+const host = new EditorHost();
+const args = process.argv.slice(2);
+const configIndex = args.indexOf("--config");
+if (configIndex >= 0) host.diagnostics.push(...await host.loader.config(args[configIndex + 1] ?? ""));
+else if (!args.includes("--no-plugins")) new CodeAssembly().install(host);
+for (const diagnostic of host.diagnostics) console.log(diagnostic);
+host.application.run();

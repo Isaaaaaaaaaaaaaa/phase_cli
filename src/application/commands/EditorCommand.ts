@@ -4,6 +4,7 @@ export type CommandCategory = "edit" | "io" | "query" | "history";
 
 export interface EditorCommand {
   readonly category: CommandCategory;
+  readonly eventKind?: "edit" | "baseline";
   execute(session: EditorSession): readonly string[];
 }
 

@@ -16,6 +16,10 @@ export class GroupShape extends Shape {
     return "g";
   }
 
+  public override get isContainer(): boolean { return true; }
+  public assertCanDetach(id: string): void { if (!id) throw new Error("invalid child id"); }
+  public assertCanUngroup(): void {}
+
   public override get children(): readonly Shape[] {
     return this.childShapes;
   }

@@ -44,6 +44,10 @@ export abstract class Shape {
     return [];
   }
 
+  public get typeName(): string { return this.tagName; }
+  public get isContainer(): boolean { return false; }
+  public creationMessage(): string { return `${this.typeName}#${this.id} created`; }
+
   public abstract move(dx: number, dy: number): void;
 
   public abstract scale(factor: number): void;
