@@ -3,4 +3,7 @@ dist/
 coverage/
 *.svg
 !fixtures/*.svg
+!extensions/vscode-svg/examples/*.svg
+!doc/transcript/*.svg
+*.vsix
 .DS_Store
