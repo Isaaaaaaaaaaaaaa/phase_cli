@@ -1,0 +1,17 @@
+[
+  {
+    "session": "cli-1",
+    "bytes": 1974,
+    "identical": true
+  },
+  {
+    "session": "box",
+    "bytes": 966,
+    "identical": true
+  },
+  {
+    "session": "plugins",
+    "bytes": 1069,
+    "identical": true
+  }
+]

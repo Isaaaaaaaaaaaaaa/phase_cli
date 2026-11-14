@@ -1,0 +1,24 @@
+@startuml
+skinparam componentStyle rectangle
+package "CLI" {
+  [CommandFactory]
+}
+package "Application" {
+  [Concrete Commands]
+  [HistoryManager]
+}
+package "Domain" {
+  [ShapeFactory]
+  [SvgDocument]
+  [Six Shapes]
+}
+package "Infrastructure" {
+  [FileSvgRepository]
+}
+[CommandFactory] --> [Concrete Commands]
+[CommandFactory] --> [ShapeFactory]
+[Concrete Commands] --> [SvgDocument]
+[ShapeFactory] --> [Six Shapes]
+[SvgDocument] --> [Six Shapes] : container operations
+[FileSvgRepository] --> [ShapeFactory]
+@enduml

@@ -1,0 +1,24 @@
+name: Verify SVG plugin project
+on:
+  push:
+  pull_request:
+
+jobs:
+  cli-and-dsh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: node scripts/verify-assembly.mjs
+      - run: node scripts/verify-ocp.mjs
+      - run: npm --prefix integrations/dsh-svg ci
+      - run: npm run test:dsh
+      - run: npm --prefix extensions/vscode-svg ci
+      - run: xvfb-run -a npm run test:vscode

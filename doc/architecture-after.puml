@@ -1,0 +1,46 @@
+@startuml
+skinparam componentStyle rectangle
+package "Kernel" {
+  [Shape and GroupShape]
+  [SvgDocument]
+  [SvgEditor and HistoryManager]
+  [TreeRenderer]
+  [ExtensionRegistry]
+  interface ShapeProvider
+  interface Command
+  interface AttributeHandler
+  interface TreeDecorator
+}
+package "Host" {
+  [EditorHost]
+  [CodeAssembly]
+  [PluginLoader]
+  [FileSvgRepository]
+  [NodeDirectoryReader]
+}
+package "Plugins" {
+  [Builtins]
+  [Stats and Dir]
+  [Box]
+  [ModifiedStar]
+}
+[EditorHost] --> [Builtins]
+[CodeAssembly] --> [Stats and Dir]
+[CodeAssembly] --> [Box]
+[CodeAssembly] --> [ModifiedStar]
+[PluginLoader] --> [ExtensionRegistry]
+[SvgEditor and HistoryManager] --> [SvgDocument]
+[SvgDocument] --> [Shape and GroupShape]
+[TreeRenderer] --> [ExtensionRegistry]
+[ExtensionRegistry] --> ShapeProvider
+[ExtensionRegistry] --> Command
+[ExtensionRegistry] --> AttributeHandler
+[ExtensionRegistry] --> TreeDecorator
+[Builtins] ..|> ShapeProvider
+[Builtins] ..|> Command
+[Stats and Dir] ..|> Command
+[Box] ..|> ShapeProvider
+[Box] ..|> AttributeHandler
+[Box] ..|> TreeDecorator
+[ModifiedStar] ..|> TreeDecorator
+@enduml

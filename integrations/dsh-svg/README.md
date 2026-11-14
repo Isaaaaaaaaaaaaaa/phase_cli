@@ -4,6 +4,15 @@ Four real DeepSeek Harness tools: `svg_inspect`, `svg_edit`, `svg_history`, `svg
 
 From this directory run `npm ci && npm test`, then `npm pack`. Install the resulting tarball using `dsh plugin --profile web add /absolute/path/dsh-svg-workbench-0.2.0.tgz`, then restart `dsh web`. The package bundles the CLI's public editor facade and plugin implementations; users do not need the course source checkout at runtime.
 
+Without global DSH/pnpm installations:
+
+```bash
+npm exec --yes --package=@deepseek-ai/dsh@0.2.2-rc.3 --package=pnpm@12.18.0 -- dsh plugin --profile web add "/absolute/path/dsh-svg-workbench-0.2.0.tgz"
+npm exec --yes --package=@deepseek-ai/dsh@0.2.2-rc.3 -- dsh web
+```
+
+Start from the target project directory: the tool root defaults to the host process working directory, or can be set through the plugin's `root` option. Selecting a different workspace in the UI does not silently change this configured file boundary.
+
 Tested SDK target: Cordis 4.1.0 and DSH tools 0.2.2-rc.3. DSH is in developer preview; use the matching 0.2.2-rc.3 host. Runtime SDK helpers are bundled so installation does not depend on pnpm auto-installing peer dependencies. The plugin still registers through the host's actual `ctx.tools` service. `engines.dsh` is checked by current hosts.
 
 Example agent request: “Create a two-node SVG flowchart with Chinese labels, move the second node down, inspect the tree, then save as flow.svg.” The model uses editing tools and explicitly saves the artifact. API credentials stay in the host's configuration.
