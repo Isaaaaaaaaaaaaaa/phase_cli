@@ -1,0 +1,7 @@
+{
+  "cordis": "4.1.0",
+  "dshTools": "0.2.2-rc.3",
+  "nativeRegistry": true,
+  "promptAssembly": "Unused SystemPrompt service is a fixture; ToolsService and plugin lifecycle are real SDK.",
+  "result": "PASS"
+}

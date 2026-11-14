@@ -1,0 +1,20 @@
+
+> dsh-svg-workbench@0.2.0 test
+> npm run build && node --test tests/*.test.mjs
+
+
+> dsh-svg-workbench@0.2.0 build
+> tsc --noEmit && esbuild src/index.ts --bundle --platform=node --format=esm --target=node24 --outfile=lib/index.js
+
+REAL_DSH_REGISTRY: load + schema validation + scoped call + save + inspect + unload PASS
+✔ actual Cordis + DSH registry loads, calls and unloads the plugin (10.311917ms)
+✔ agent sessions isolate state and failed batches preserve history (3.791625ms)
+✔ workspace paths reject traversal, external symlinks and non-SVG outputs (1.885541ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 105.640125
