@@ -1,0 +1,14 @@
+dir
+init 800 600
+stats
+create g scene
+create rect r 10 20 30 40 red in scene
+create circle c 40 50 10 blue
+create text t 10 15 "hello"
+stats
+move r 3 4
+undo
+dir
+redo
+stats
+help
