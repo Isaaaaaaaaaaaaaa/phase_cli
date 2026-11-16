@@ -1,5 +1,9 @@
 {
   "rule": "TypeScript physical LOC, AST function CC=1 + if/loops/case/catch/ternary/&&/||/??; nested functions counted separately; tests/dependencies/build outputs excluded; JSON manifests listed separately and excluded from executable-code totals",
+  "baselineRef": "final",
+  "baselineCommit": "52958b43cfd62fa576136d62903cfb436aeb18e5",
+  "targetRef": "e96bdca",
+  "targetCommit": "e96bdcae78aa387b9cd37a96fb8026883d722cb6",
   "final": [
     {
       "category": "内核",
@@ -30,13 +34,13 @@
     {
       "category": "内核",
       "files": 22,
-      "lines": 973,
+      "lines": 979,
       "complexity": 239
     },
     {
       "category": "装配处",
       "files": 10,
-      "lines": 465,
+      "lines": 463,
       "complexity": 116
     },
     {
@@ -437,7 +441,7 @@
       "responsibilities": "插件可使用的公开 API 门面；启动入口",
       "lines": 24,
       "complexity": 0,
-      "sha256": "7eb666d6e4fba3277d1395465ea1bab0eac079a0c5de006397da7979ef9ccbf7"
+      "sha256": "628807d70db24ece30a465644ea2c615bf960833d5e61aa4ac14e0a7c8200e6a"
     },
     {
       "path": "src/application/EditorSession.ts",
@@ -522,10 +526,10 @@
     {
       "path": "src/cli/CommandTokenizer.ts",
       "category": "装配处",
-      "responsibilities": "REPL、命令输入、分发及统一错误输出；CommandToken, CommandTokenizer",
-      "lines": 60,
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；CommandTokenizer",
+      "lines": 58,
       "complexity": 14,
-      "sha256": "665377cf763d4324fe30c41e544349888495cb5d2d57fb8fffdd37e2b83528cb"
+      "sha256": "a0a4472e7bcc4927a687838015451f7271357e931eb38b6b731db73be837b178"
     },
     {
       "path": "src/cli/SvgCli.ts",
@@ -594,18 +598,18 @@
     {
       "path": "src/extensions/Command.ts",
       "category": "内核",
-      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；Command",
-      "lines": 9,
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；CommandToken, Command",
+      "lines": 12,
       "complexity": 0,
-      "sha256": "09c48dfd362039eb02d5875c1e9f0ca41e1c312f325ba550aa5f5e5d23cc6411"
+      "sha256": "bc27455161d17452e41114f12d851206fbf1bfa3a3ae3a40b6f31067cc73c40c"
     },
     {
       "path": "src/extensions/ExtensionRegistry.ts",
       "category": "内核",
       "responsibilities": "公开扩展契约、注册、属性路由及标签组合；ExtensionRegistry",
-      "lines": 82,
+      "lines": 85,
       "complexity": 47,
-      "sha256": "2125bda4c2edc1ebc92f5a9450b6f2e1ba07b132855010aeb3eb2053a0c41293"
+      "sha256": "d7ce6715fa254f3ee72d3a1e6673b58d81e860cac318b36cca40bddf93112d6b"
     },
     {
       "path": "src/extensions/Plugin.ts",
@@ -677,7 +681,7 @@
       "responsibilities": "模块解析、配置校验及注册事务；PluginLoader",
       "lines": 81,
       "complexity": 40,
-      "sha256": "cd086d1a9473435da2b9887d187988a87a50bf0fc74ffba94346b1292645e99e"
+      "sha256": "6e1faf3ad676b12d4aff000fd5412f484f45f01085e7828f5666baadbc872165"
     },
     {
       "path": "src/infrastructure/FileSvgRepository.ts",
@@ -1008,7 +1012,7 @@
     },
     {
       "path": "package.json",
-      "lines": 44,
+      "lines": 48,
       "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
     },
     {

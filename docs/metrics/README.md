@@ -1,23 +1,23 @@
-# 自动生成指标
+# 架构指标
 
-运行 `node scripts/metrics.mjs p2`。基线为 `final`。所有源文件读取 Git 历史；数字不可手改。
+生成：`node scripts/metrics.mjs e96bdca`。
 
-口径：TypeScript physical LOC, AST function CC=1 + if/loops/case/catch/ternary/&&/||/??; nested functions counted separately; tests/dependencies/build outputs excluded; JSON manifests listed separately and excluded from executable-code totals
+基线：`final`（52958b4）；统计提交：`e96bdca`。
 
-VSCode 单独列出，不混入 CLI 增量。
+脚本从 Git 历史解析 TypeScript AST，按模块职责分类。物理行数包含注释和空行；函数圈复杂度从 1 起算，if、循环、case、catch、三元表达式及 && / || / ?? 各增加 1。嵌套函数独立计数。依赖、测试和构建产物排除。
 
-| 分类 | 文件数 final → Phase 2 | 行数 | 圈复杂度 | 复杂度增量 |
+VSCode 单列；JSON 清单另列。
+
+| 分类 | 文件数 final → 统计提交 | 行数 | 圈复杂度 | 复杂度增量 |
 | --- | --- | --- | --- | --- |
-| 内核 | 37 → 22 | 1886 → 973 | 356 → 239 | -117 |
-| 装配处 | 5 → 10 | 550 → 465 | 136 → 116 | -20 |
+| 内核 | 37 → 22 | 1886 → 979 | 356 → 239 | -117 |
+| 装配处 | 5 → 10 | 550 → 463 | 136 → 116 | -20 |
 | 插件 | 0 → 39 | 0 → 1370 | 0 → 345 | 345 |
 | VSCode | 0 → 5 | 0 → 132 | 0 → 42 | 42 |
 
 ## 文件清单与职责
 
-职责由目录职责规则与 AST 中的类/接口名生成。
-
-| 文件 | 分类 | 类/接口职责 | 行数 | 复杂度 |
+| 文件 | 分类 | 职责 | 行数 | 复杂度 |
 | --- | --- | --- | --- | --- |
 | extensions/vscode-svg/src/SvgDocumentSymbolProvider.ts | VSCode | XML 源范围解析及 VSCode 文件/符号展示适配；SvgDocumentSymbolProvider | 26 | 5 |
 | extensions/vscode-svg/src/SvgFileDecorationProvider.ts | VSCode | XML 源范围解析及 VSCode 文件/符号展示适配；SvgFileDecorationProvider | 25 | 9 |
@@ -35,7 +35,7 @@ VSCode 单独列出，不混入 CLI 增量。
 | src/application/presentation/ShapeRenderer.ts | 内核 | 结构树和属性明细的基线渲染；ShapeRenderer | 20 | 6 |
 | src/application/presentation/TreeRenderer.ts | 内核 | 结构树和属性明细的基线渲染；TreeRenderer | 37 | 11 |
 | src/cli/CommandFactory.ts | 装配处 | REPL、命令输入、分发及统一错误输出；CommandFactory | 17 | 4 |
-| src/cli/CommandTokenizer.ts | 装配处 | REPL、命令输入、分发及统一错误输出；CommandToken, CommandTokenizer | 60 | 14 |
+| src/cli/CommandTokenizer.ts | 装配处 | REPL、命令输入、分发及统一错误输出；CommandTokenizer | 58 | 14 |
 | src/cli/SvgCli.ts | 装配处 | REPL、命令输入、分发及统一错误输出；启动入口 | 11 | 0 |
 | src/cli/SvgCliApplication.ts | 装配处 | REPL、命令输入、分发及统一错误输出；SvgCliApplication | 41 | 8 |
 | src/domain/EditorError.ts | 内核 | 封装图形、组合树、ID 不变量及图形工厂；EditorError | 6 | 1 |
@@ -44,8 +44,8 @@ VSCode 单独列出，不混入 CLI 增量。
 | src/domain/shapes/GroupShape.ts | 内核 | 封装图形、组合树、ID 不变量及图形工厂；GroupShape | 90 | 26 |
 | src/domain/shapes/Shape.ts | 内核 | 封装图形、组合树、ID 不变量及图形工厂；ShapeOptions, Shape | 128 | 27 |
 | src/extensions/AttributeHandler.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；AttributeHandler | 8 | 0 |
-| src/extensions/Command.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；Command | 9 | 0 |
-| src/extensions/ExtensionRegistry.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；ExtensionRegistry | 82 | 47 |
+| src/extensions/Command.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；CommandToken, Command | 12 | 0 |
+| src/extensions/ExtensionRegistry.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；ExtensionRegistry | 85 | 47 |
 | src/extensions/Plugin.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；PluginContext, Plugin, PluginManifest | 19 | 0 |
 | src/extensions/PluginServices.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；PluginServices | 13 | 0 |
 | src/extensions/ShapeProvider.ts | 内核 | 公开扩展契约、注册、属性路由及标签组合；SvgShapeInput, ShapeProvider | 15 | 0 |
@@ -98,12 +98,10 @@ VSCode 单独列出，不混入 CLI 增量。
 
 ## 运行配置与贡献清单
 
-配置文件从同一 Git 引用读取，单独列出，不混入 TypeScript 可执行代码复杂度。
-
 | 文件 | 职责 | 行数 |
 | --- | --- | --- |
 | extensions/vscode-svg/package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 23 |
-| package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 44 |
+| package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 48 |
 | plugins.config.json | 配置装配的插件选择、顺序和 options | 8 |
 | src/plugins/builtin-commands/package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 6 |
 | src/plugins/builtin-shapes/package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 6 |
