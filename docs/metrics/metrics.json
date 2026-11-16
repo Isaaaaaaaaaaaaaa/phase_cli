@@ -1,0 +1,1054 @@
+{
+  "rule": "TypeScript physical LOC, AST function CC=1 + if/loops/case/catch/ternary/&&/||/??; nested functions counted separately; tests/dependencies/build outputs excluded; JSON manifests listed separately and excluded from executable-code totals",
+  "baselineRef": "final",
+  "baselineCommit": "52958b43cfd62fa576136d62903cfb436aeb18e5",
+  "targetRef": "deaaacb",
+  "targetCommit": "deaaacbc6fb3fe486bed94656fc4d22b151ed96b",
+  "final": [
+    {
+      "category": "内核",
+      "files": 37,
+      "lines": 1886,
+      "complexity": 356
+    },
+    {
+      "category": "装配处",
+      "files": 5,
+      "lines": 550,
+      "complexity": 136
+    },
+    {
+      "category": "插件",
+      "files": 0,
+      "lines": 0,
+      "complexity": 0
+    },
+    {
+      "category": "VSCode",
+      "files": 0,
+      "lines": 0,
+      "complexity": 0
+    }
+  ],
+  "phase2": [
+    {
+      "category": "内核",
+      "files": 22,
+      "lines": 979,
+      "complexity": 239
+    },
+    {
+      "category": "装配处",
+      "files": 10,
+      "lines": 463,
+      "complexity": 116
+    },
+    {
+      "category": "插件",
+      "files": 39,
+      "lines": 1370,
+      "complexity": 345
+    },
+    {
+      "category": "VSCode",
+      "files": 5,
+      "lines": 132,
+      "complexity": 42
+    }
+  ],
+  "baseline": [
+    {
+      "path": "src/application/EditorSession.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；EditorSession",
+      "lines": 31,
+      "complexity": 6,
+      "sha256": "c1056eacf68e24851f40427fbf00792c3822d2459280901bb2967c3db7061d5d"
+    },
+    {
+      "path": "src/application/HistoryManager.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；HistoryManager",
+      "lines": 56,
+      "complexity": 9,
+      "sha256": "710bd7d9f8a1b70d1fb0872acaa9c0f7ff3d50a26f187588ab96947dbba70f6a"
+    },
+    {
+      "path": "src/application/SvgEditor.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；SvgEditor",
+      "lines": 29,
+      "complexity": 5,
+      "sha256": "800a53092275399688ee55b0d0494da62236034d86d280c6670c22b956018129"
+    },
+    {
+      "path": "src/application/commands/AddToCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；AddToCommand",
+      "lines": 28,
+      "complexity": 3,
+      "sha256": "c3aa2cb84360fc7bf6af0ff640f82458e05c116d063480ecc1534bf3ea255dfd"
+    },
+    {
+      "path": "src/application/commands/BackCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；BackCommand",
+      "lines": 20,
+      "complexity": 3,
+      "sha256": "4c6a91b34c694f49971a0758eb4e468e01bf09bf0f58bf15469748aea3de95d7"
+    },
+    {
+      "path": "src/application/commands/CanvasCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；CanvasCommand",
+      "lines": 27,
+      "complexity": 6,
+      "sha256": "0e337ddb213c5f909370a524a0fe954112512f89086216ac6dbc9ff6f1f24bdf"
+    },
+    {
+      "path": "src/application/commands/CreateCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；CreateCommand",
+      "lines": 27,
+      "complexity": 4,
+      "sha256": "d1aafb98e57871f54dd3d9aa6b711a391476abf39e431cc35b0068f4bc543392"
+    },
+    {
+      "path": "src/application/commands/DeleteCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；DeleteCommand",
+      "lines": 23,
+      "complexity": 3,
+      "sha256": "f8b0a929d377e83dfae093a7b5456b6191e53c5f6f2d8314116c365f0e87e46e"
+    },
+    {
+      "path": "src/application/commands/EditorCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；EditorCommand, IoCommand, ReversibleCommand",
+      "lines": 19,
+      "complexity": 0,
+      "sha256": "a2189ace3e5fdcc1a52b5a55e7a6d3dba50ced16a875ca323683a26eb0c337b0"
+    },
+    {
+      "path": "src/application/commands/FrontCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；FrontCommand",
+      "lines": 20,
+      "complexity": 3,
+      "sha256": "e344a6154fcd66e6fccf42f97914ea62431ee04fbb292aca97870ddd3aa2615b"
+    },
+    {
+      "path": "src/application/commands/GroupCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；GroupCommand",
+      "lines": 20,
+      "complexity": 3,
+      "sha256": "2742b9bf2e74595bd9b49e62d1efd0d3635830a185642d9f12ae413dfeea7285"
+    },
+    {
+      "path": "src/application/commands/HelpCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；HelpCommand",
+      "lines": 33,
+      "complexity": 1,
+      "sha256": "f145f0376f13877b889a69f7e8f9dd9d26c7f689809ac94ae554d090d4b27b47"
+    },
+    {
+      "path": "src/application/commands/InitCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；InitCommand",
+      "lines": 18,
+      "complexity": 2,
+      "sha256": "cdc8012f1b38b2f6a876a840d7557c018b74695ff74ea9173a859945725c599e"
+    },
+    {
+      "path": "src/application/commands/MoveCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；MoveCommand",
+      "lines": 36,
+      "complexity": 9,
+      "sha256": "eaa417ec237fbd38a1d53b363543397f40f08504a9f25ba0b4ee5c3ef8b99a37"
+    },
+    {
+      "path": "src/application/commands/ReadCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；ReadCommand",
+      "lines": 30,
+      "complexity": 4,
+      "sha256": "49f8037fec9b674c4f804d473d16508e0890d738d4d32251a38e8941b15635ac"
+    },
+    {
+      "path": "src/application/commands/RedoCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；RedoCommand",
+      "lines": 14,
+      "complexity": 2,
+      "sha256": "c2c50394cd03beba4344140122844e905e81e0feb4b247d73f4db98f7d266c1b"
+    },
+    {
+      "path": "src/application/commands/SaveCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；SaveCommand",
+      "lines": 29,
+      "complexity": 5,
+      "sha256": "5c378e1022f6d9a27db9bc2639c23aba1ada258cf31356419fa534cddba46c44"
+    },
+    {
+      "path": "src/application/commands/ScaleCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；ScaleCommand",
+      "lines": 28,
+      "complexity": 5,
+      "sha256": "27e67f5d641326cb582123b5a29e56c1cbbcc61ffadd250b25a55b7b283d19c3"
+    },
+    {
+      "path": "src/application/commands/SetCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；SetCommand",
+      "lines": 31,
+      "complexity": 4,
+      "sha256": "67adb2856c25403881c91d36091e1ba077f17b1227b71489790ac6dc887473fe"
+    },
+    {
+      "path": "src/application/commands/ShowCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；ShowCommand",
+      "lines": 18,
+      "complexity": 2,
+      "sha256": "3c12ea10fa2b8bbe427825b19a8d4e2eb9f5ff235a7ae9437443696ab2963657"
+    },
+    {
+      "path": "src/application/commands/SnapshotCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；SnapshotCommand",
+      "lines": 44,
+      "complexity": 6,
+      "sha256": "3fd557e6914f3970c8757251e85115879295bae986e8ce56152b1e4b4a4cdc7d"
+    },
+    {
+      "path": "src/application/commands/TreeCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；TreeCommand",
+      "lines": 16,
+      "complexity": 2,
+      "sha256": "be88aaceda295c2e11689df4386c7cea9833f0b4e3d147cbf59bc52dd5454b00"
+    },
+    {
+      "path": "src/application/commands/UndoCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；UndoCommand",
+      "lines": 14,
+      "complexity": 2,
+      "sha256": "cd0beb595c6bcc570337e18403b009e0fbafe4f577eed7862726af498a2ced97"
+    },
+    {
+      "path": "src/application/commands/UngroupCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；UngroupCommand",
+      "lines": 19,
+      "complexity": 3,
+      "sha256": "f2ebfc4b6f88ded65de2d04d90c1f41e2614b1df85531cae1396e5e536a8de4e"
+    },
+    {
+      "path": "src/application/ports/SvgRepository.ts",
+      "category": "内核",
+      "responsibilities": "宿主 I/O 依赖端口；ReadResult, SvgRepository",
+      "lines": 11,
+      "complexity": 0,
+      "sha256": "fb4b0d34e6e9477d64d0bf378cd6cd6bba1d3cc3dc20c486ad9047c2592d5f2e"
+    },
+    {
+      "path": "src/application/presentation/ShapeRenderer.ts",
+      "category": "内核",
+      "responsibilities": "结构树和属性明细的基线渲染；ShapeRenderer",
+      "lines": 20,
+      "complexity": 6,
+      "sha256": "f04c0400aa2b69b7271852a0c29984abfd07635f320380aca43ab862a3272be5"
+    },
+    {
+      "path": "src/application/presentation/TreeRenderer.ts",
+      "category": "内核",
+      "responsibilities": "结构树和属性明细的基线渲染；TreeRenderer",
+      "lines": 33,
+      "complexity": 6,
+      "sha256": "97e0f86c1606907c66ea24127eb274f833c9429b15e662eee006b05842da0f24"
+    },
+    {
+      "path": "src/cli/CommandFactory.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；CommandFactory",
+      "lines": 245,
+      "complexity": 74,
+      "sha256": "799425780b99895df5493d2625676542b186153bcac299034664fa72959a22d7"
+    },
+    {
+      "path": "src/cli/CommandTokenizer.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；CommandToken, CommandTokenizer",
+      "lines": 60,
+      "complexity": 14,
+      "sha256": "665377cf763d4324fe30c41e544349888495cb5d2d57fb8fffdd37e2b83528cb"
+    },
+    {
+      "path": "src/cli/SvgCli.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；启动入口",
+      "lines": 18,
+      "complexity": 0,
+      "sha256": "788b661148d3b04c391aa4902fddf903c4aa089bf68da4643980712696f7c547"
+    },
+    {
+      "path": "src/cli/SvgCliApplication.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；SvgCliApplication",
+      "lines": 41,
+      "complexity": 8,
+      "sha256": "6168f4d22a4a4399b52358f34120dfeabe3f502046d3ad9d6b49af62bd0d93dd"
+    },
+    {
+      "path": "src/domain/EditorError.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；EditorError",
+      "lines": 6,
+      "complexity": 1,
+      "sha256": "6107993ce29c3316cb44548cde83f6b6fb82abb4dff74f5449958a294fd788a0"
+    },
+    {
+      "path": "src/domain/ShapeFactory.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；ShapeFactory",
+      "lines": 256,
+      "complexity": 47,
+      "sha256": "96da1e9d8c497c50b00b768fc3a64afab7ad6b7b02dbea64a83e820f3a69ecf5"
+    },
+    {
+      "path": "src/domain/SvgDocument.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；ShapeLocation, SvgDocument",
+      "lines": 273,
+      "complexity": 74,
+      "sha256": "9a70ca4430ad7c23ff30cb97e19cb034c679397cb24ed661a734139c6cb4d4d9"
+    },
+    {
+      "path": "src/domain/shapes/CircleShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；CircleShape",
+      "lines": 82,
+      "complexity": 16,
+      "sha256": "8225e77ea3ca9f277bf90a1bfeae9ae8e9c7aafc8b977c4acb540e547a038b6b"
+    },
+    {
+      "path": "src/domain/shapes/EllipseShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；EllipseShape",
+      "lines": 93,
+      "complexity": 17,
+      "sha256": "b79040942b6ce9190cf6330bc6fc1cb16233238a7109d8e8cda92cf25fad10a8"
+    },
+    {
+      "path": "src/domain/shapes/GroupShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；GroupShape",
+      "lines": 86,
+      "complexity": 22,
+      "sha256": "6625f72b48eb1b4dd65ab6f4c4dcbcad174275c7cb9be0a6f5bf069ec86412f0"
+    },
+    {
+      "path": "src/domain/shapes/LineShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；LineShape",
+      "lines": 91,
+      "complexity": 16,
+      "sha256": "95ff894cc765a5e8631194364f8578d33170e92a573dcfee7aa233f5a80143cb"
+    },
+    {
+      "path": "src/domain/shapes/RectShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；RectShape",
+      "lines": 93,
+      "complexity": 17,
+      "sha256": "47d05ab1cb82432359e4c0f2d7d4cf65bcd1e22ebf8698504fd3a23db6613df8"
+    },
+    {
+      "path": "src/domain/shapes/Shape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；ShapeOptions, Shape",
+      "lines": 124,
+      "complexity": 24,
+      "sha256": "00e0099ff88de81d2e74b9d538950eac0a83937730180d12f190cc6172e8b0bc"
+    },
+    {
+      "path": "src/domain/shapes/TextShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；TextShape",
+      "lines": 88,
+      "complexity": 18,
+      "sha256": "7ac9c85d2325ec5a00a1d0c61e5d7fb819e8ad0a42dbf04d794ec40465572bae"
+    },
+    {
+      "path": "src/infrastructure/FileSvgRepository.ts",
+      "category": "装配处",
+      "responsibilities": "XML 与领域对象适配及原子文件保存；FileSvgRepository",
+      "lines": 186,
+      "complexity": 40,
+      "sha256": "99e050ce06bd044127abd0c3a5f82ef9d13085d7355d80461fe4ac82e15f3c69"
+    }
+  ],
+  "target": [
+    {
+      "path": "extensions/vscode-svg/src/SvgDocumentSymbolProvider.ts",
+      "category": "VSCode",
+      "responsibilities": "XML 源范围解析及 VSCode 文件/符号展示适配；SvgDocumentSymbolProvider",
+      "lines": 26,
+      "complexity": 5,
+      "sha256": "f6c4e4a89d9f87a3301756f57e5abbfe2b699c8e834b2c50cf594e0c786ed028"
+    },
+    {
+      "path": "extensions/vscode-svg/src/SvgFileDecorationProvider.ts",
+      "category": "VSCode",
+      "responsibilities": "XML 源范围解析及 VSCode 文件/符号展示适配；SvgFileDecorationProvider",
+      "lines": 25,
+      "complexity": 9,
+      "sha256": "e5c95d65ee03216e828c5c8e9e6888add11cf0b56790def8020de82f8a7e21fd"
+    },
+    {
+      "path": "extensions/vscode-svg/src/XmlOutlineNode.ts",
+      "category": "VSCode",
+      "responsibilities": "XML 源范围解析及 VSCode 文件/符号展示适配；XmlOutlineNode",
+      "lines": 26,
+      "complexity": 12,
+      "sha256": "f18e871155f545569ffc90e6e2a4e39da8c63963e5ee5b8661329ae4533a96c6"
+    },
+    {
+      "path": "extensions/vscode-svg/src/XmlOutlineParser.ts",
+      "category": "VSCode",
+      "responsibilities": "XML 源范围解析及 VSCode 文件/符号展示适配；XmlOutlineParser",
+      "lines": 37,
+      "complexity": 12,
+      "sha256": "969c04404c571edf75ab08253414c9c9f6da459437b4239c1e6e7ea67307ccde"
+    },
+    {
+      "path": "extensions/vscode-svg/src/extension.ts",
+      "category": "VSCode",
+      "responsibilities": "XML 源范围解析及 VSCode 文件/符号展示适配；启动入口",
+      "lines": 18,
+      "complexity": 4,
+      "sha256": "02fc6cbcba5a333ffb496d49e16682d4469609cb9139bf8161c2cad06fbb76ab"
+    },
+    {
+      "path": "src/api.ts",
+      "category": "内核",
+      "responsibilities": "插件可使用的公开 API 门面；启动入口",
+      "lines": 24,
+      "complexity": 0,
+      "sha256": "628807d70db24ece30a465644ea2c615bf960833d5e61aa4ac14e0a7c8200e6a"
+    },
+    {
+      "path": "src/application/EditorSession.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；EditorSession",
+      "lines": 32,
+      "complexity": 7,
+      "sha256": "562d9cf2c1f01f3163bd8b6e10b13fad2dbc7bb4918b02da7968acd0763a44f5"
+    },
+    {
+      "path": "src/application/HistoryManager.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；HistoryManager",
+      "lines": 56,
+      "complexity": 9,
+      "sha256": "710bd7d9f8a1b70d1fb0872acaa9c0f7ff3d50a26f187588ab96947dbba70f6a"
+    },
+    {
+      "path": "src/application/SvgEditor.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；SvgEditor",
+      "lines": 36,
+      "complexity": 11,
+      "sha256": "f025974294328aa723d6410f4ecd31c86722debbe637d406911e24055bc84f41"
+    },
+    {
+      "path": "src/application/commands/EditorCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；EditorCommand, IoCommand, ReversibleCommand",
+      "lines": 20,
+      "complexity": 0,
+      "sha256": "a89233d9520b40b8a8d697ca0f799ac8270a1683048fbd99e2375d71c5985117"
+    },
+    {
+      "path": "src/application/commands/SnapshotCommand.ts",
+      "category": "内核",
+      "responsibilities": "会话、命令快照、历史及编辑编排；SnapshotCommand",
+      "lines": 44,
+      "complexity": 6,
+      "sha256": "3fd557e6914f3970c8757251e85115879295bae986e8ce56152b1e4b4a4cdc7d"
+    },
+    {
+      "path": "src/application/ports/DirectoryReader.ts",
+      "category": "内核",
+      "responsibilities": "宿主 I/O 依赖端口；DirectoryEntry, DirectoryReader",
+      "lines": 8,
+      "complexity": 0,
+      "sha256": "a9edf232513dab1005375f3458dece46d8934a781a897a7282189e8be531483d"
+    },
+    {
+      "path": "src/application/ports/SvgRepository.ts",
+      "category": "内核",
+      "responsibilities": "宿主 I/O 依赖端口；ReadResult, SvgRepository",
+      "lines": 11,
+      "complexity": 0,
+      "sha256": "fb4b0d34e6e9477d64d0bf378cd6cd6bba1d3cc3dc20c486ad9047c2592d5f2e"
+    },
+    {
+      "path": "src/application/presentation/ShapeRenderer.ts",
+      "category": "内核",
+      "responsibilities": "结构树和属性明细的基线渲染；ShapeRenderer",
+      "lines": 20,
+      "complexity": 6,
+      "sha256": "6d93e386c5359189c6ee883d0dc91f3b10867db16a6305469473621b1ba08d3e"
+    },
+    {
+      "path": "src/application/presentation/TreeRenderer.ts",
+      "category": "内核",
+      "responsibilities": "结构树和属性明细的基线渲染；TreeRenderer",
+      "lines": 37,
+      "complexity": 11,
+      "sha256": "acd94d470d7e261c06d03f5faf5eb4e60908ae9f024eb4334f1367e40683f5b6"
+    },
+    {
+      "path": "src/cli/CommandFactory.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；CommandFactory",
+      "lines": 17,
+      "complexity": 4,
+      "sha256": "e2e5db391f4d1c53d3842a18ca6c440ec169aef8fa963d9868d9b3099b865127"
+    },
+    {
+      "path": "src/cli/CommandTokenizer.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；CommandTokenizer",
+      "lines": 58,
+      "complexity": 14,
+      "sha256": "a0a4472e7bcc4927a687838015451f7271357e931eb38b6b731db73be837b178"
+    },
+    {
+      "path": "src/cli/SvgCli.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；启动入口",
+      "lines": 11,
+      "complexity": 0,
+      "sha256": "4a6bcb7d6bf1ab01523c196f422de6113414335abdc50d35e6b0a039ac5bd70e"
+    },
+    {
+      "path": "src/cli/SvgCliApplication.ts",
+      "category": "装配处",
+      "responsibilities": "REPL、命令输入、分发及统一错误输出；SvgCliApplication",
+      "lines": 41,
+      "complexity": 8,
+      "sha256": "6168f4d22a4a4399b52358f34120dfeabe3f502046d3ad9d6b49af62bd0d93dd"
+    },
+    {
+      "path": "src/domain/EditorError.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；EditorError",
+      "lines": 6,
+      "complexity": 1,
+      "sha256": "6107993ce29c3316cb44548cde83f6b6fb82abb4dff74f5449958a294fd788a0"
+    },
+    {
+      "path": "src/domain/ShapeFactory.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；ShapeFactory",
+      "lines": 24,
+      "complexity": 11,
+      "sha256": "a3029bc268f7947b4a00de124454f5313e7d2c1076a96a524b6a261879531b98"
+    },
+    {
+      "path": "src/domain/SvgDocument.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；ShapeLocation, SvgDocument",
+      "lines": 278,
+      "complexity": 77,
+      "sha256": "81da12a5b9b18eb935461985397b495df356143faa317fb61caab50ba4b8272e"
+    },
+    {
+      "path": "src/domain/shapes/GroupShape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；GroupShape",
+      "lines": 90,
+      "complexity": 26,
+      "sha256": "7733940cb39458e64b98e9c6753f2fb3a6cb01fbec232032b3363f7746905235"
+    },
+    {
+      "path": "src/domain/shapes/Shape.ts",
+      "category": "内核",
+      "responsibilities": "封装图形、组合树、ID 不变量及图形工厂；ShapeOptions, Shape",
+      "lines": 128,
+      "complexity": 27,
+      "sha256": "1d2eea6d4fcdc84d9d97bab48a0c3c927b0a6d7cb6647e4ddfe4ed88ab38f2cc"
+    },
+    {
+      "path": "src/extensions/AttributeHandler.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；AttributeHandler",
+      "lines": 8,
+      "complexity": 0,
+      "sha256": "5b9eac9061a088916353622f26f6fa1c441fa33462c398d870ef73e3c863de22"
+    },
+    {
+      "path": "src/extensions/Command.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；CommandToken, Command",
+      "lines": 12,
+      "complexity": 0,
+      "sha256": "bc27455161d17452e41114f12d851206fbf1bfa3a3ae3a40b6f31067cc73c40c"
+    },
+    {
+      "path": "src/extensions/ExtensionRegistry.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；ExtensionRegistry",
+      "lines": 85,
+      "complexity": 47,
+      "sha256": "d7ce6715fa254f3ee72d3a1e6673b58d81e860cac318b36cca40bddf93112d6b"
+    },
+    {
+      "path": "src/extensions/Plugin.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；PluginContext, Plugin, PluginManifest",
+      "lines": 19,
+      "complexity": 0,
+      "sha256": "08fd5c4fb2900a394a9870809f9f142a21483cc3bb4afc17d15e6a351e5d8c2b"
+    },
+    {
+      "path": "src/extensions/PluginServices.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；PluginServices",
+      "lines": 13,
+      "complexity": 0,
+      "sha256": "ef5c4cfc046486e355ed831982c05febf07bd0ce156c5e507b1b465e6790463b"
+    },
+    {
+      "path": "src/extensions/ShapeProvider.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；SvgShapeInput, ShapeProvider",
+      "lines": 15,
+      "complexity": 0,
+      "sha256": "544c33909fad9ceb99142a794694619cd09230fc271474126e7bece070390d3f"
+    },
+    {
+      "path": "src/extensions/TreeDecorator.ts",
+      "category": "内核",
+      "responsibilities": "公开扩展契约、注册、属性路由及标签组合；EditorEvent, TreeDecorator",
+      "lines": 13,
+      "complexity": 0,
+      "sha256": "9bf75488286dab3693b4b128caafb7ab977b2e2bd24d3469425a850592a1428c"
+    },
+    {
+      "path": "src/host/CodeAssembly.ts",
+      "category": "装配处",
+      "responsibilities": "启动装配、宿主门面与真实目录适配；CodeAssembly",
+      "lines": 19,
+      "complexity": 1,
+      "sha256": "1f4517779bd1b38689dcef56f6b8da15827a31fd479da36bac87a887a8d7583f"
+    },
+    {
+      "path": "src/host/EditorHost.ts",
+      "category": "装配处",
+      "responsibilities": "启动装配、宿主门面与真实目录适配；EditorHost",
+      "lines": 35,
+      "complexity": 3,
+      "sha256": "9e7e8391ea9208d1396cf4b5ac838ba2b3b5408a86c028af11477e8058db47fe"
+    },
+    {
+      "path": "src/host/NodeDirectoryReader.ts",
+      "category": "装配处",
+      "responsibilities": "启动装配、宿主门面与真实目录适配；NodeDirectoryReader",
+      "lines": 12,
+      "complexity": 6,
+      "sha256": "77a8c741f78e05065f59c04718558dddef2c77f6f592668c4f195c2e3e1db6c0"
+    },
+    {
+      "path": "src/host/api.ts",
+      "category": "装配处",
+      "responsibilities": "启动装配、宿主门面与真实目录适配；启动入口",
+      "lines": 3,
+      "complexity": 0,
+      "sha256": "ecf74d9b0b36821a132b7d78b2bdd51b4b79fa813175961e68cabc6d1714f926"
+    },
+    {
+      "path": "src/host/loading/PluginLoader.ts",
+      "category": "装配处",
+      "responsibilities": "模块解析、配置校验及注册事务；PluginLoader",
+      "lines": 81,
+      "complexity": 40,
+      "sha256": "6e1faf3ad676b12d4aff000fd5412f484f45f01085e7828f5666baadbc872165"
+    },
+    {
+      "path": "src/infrastructure/FileSvgRepository.ts",
+      "category": "装配处",
+      "responsibilities": "XML 与领域对象适配及原子文件保存；FileSvgRepository",
+      "lines": 186,
+      "complexity": 40,
+      "sha256": "99e050ce06bd044127abd0c3a5f82ef9d13085d7355d80461fe4ac82e15f3c69"
+    },
+    {
+      "path": "src/plugins/builtin-commands/AddToCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；AddToCommand",
+      "lines": 27,
+      "complexity": 3,
+      "sha256": "cbd7d27436b1550d8620e5d469126ad363a8cf86cd63d3b61283e90bfac06e12"
+    },
+    {
+      "path": "src/plugins/builtin-commands/BackCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；BackCommand",
+      "lines": 19,
+      "complexity": 3,
+      "sha256": "4f8520e90a8ff24886b29c50fb9f32c5146ab97a100d87410270e2d2672841d3"
+    },
+    {
+      "path": "src/plugins/builtin-commands/BuiltinCommandsPlugin.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；BuiltinCommandsPlugin",
+      "lines": 250,
+      "complexity": 74,
+      "sha256": "5d4612613f1c74d1676054eca05bc84b5e54b53aae8ad77fc2524da00408a2fb"
+    },
+    {
+      "path": "src/plugins/builtin-commands/CanvasCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；CanvasCommand",
+      "lines": 24,
+      "complexity": 6,
+      "sha256": "299391d2cedf8956d9af75b7f9664c0cef29ae69dd6ecb5531fa6eb4fa779f75"
+    },
+    {
+      "path": "src/plugins/builtin-commands/CommandDefinition.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；CommandDefinition",
+      "lines": 11,
+      "complexity": 2,
+      "sha256": "1e7cb27af8a2045082abf1e493614ea5148fef5e3c3ce1f786d311b0972f7291"
+    },
+    {
+      "path": "src/plugins/builtin-commands/CreateCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；CreateCommand",
+      "lines": 25,
+      "complexity": 4,
+      "sha256": "b5268a2b01555be81952db8f3c64afe1d7982b28741b35c1bc4be0c472ab68d6"
+    },
+    {
+      "path": "src/plugins/builtin-commands/DeleteCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；DeleteCommand",
+      "lines": 22,
+      "complexity": 3,
+      "sha256": "633604105831a47c7f4eb28ed78c5a004eda2bb706e862890f5a726bea0e5d77"
+    },
+    {
+      "path": "src/plugins/builtin-commands/FrontCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；FrontCommand",
+      "lines": 19,
+      "complexity": 3,
+      "sha256": "603e7a3817ae485209ae1de3fdd763fd2352620c1e577efed082b3be8198e19c"
+    },
+    {
+      "path": "src/plugins/builtin-commands/GroupCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；GroupCommand",
+      "lines": 19,
+      "complexity": 3,
+      "sha256": "43f2e890915e4c7eda7c4b2aee85eb92c540d3fcf1fd944b6d73dcd33f3ffe06"
+    },
+    {
+      "path": "src/plugins/builtin-commands/HelpCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；HelpCommand",
+      "lines": 16,
+      "complexity": 6,
+      "sha256": "3fca599fd6757e7933e5632b0d42907eaa1354dda6d640bd24c2507ca891953f"
+    },
+    {
+      "path": "src/plugins/builtin-commands/InitCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；InitCommand",
+      "lines": 16,
+      "complexity": 2,
+      "sha256": "1e626fdc14a0ccf8a660b713450902aecfd5a2a98b86d82ac8ae43e4a7d4de8a"
+    },
+    {
+      "path": "src/plugins/builtin-commands/MoveCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；MoveCommand",
+      "lines": 34,
+      "complexity": 9,
+      "sha256": "7b2b72c627db18e3c8dcbfddb469b014638f75c51c63b6cb367094732be3f6e2"
+    },
+    {
+      "path": "src/plugins/builtin-commands/ReadCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；ReadCommand",
+      "lines": 27,
+      "complexity": 4,
+      "sha256": "3bc5c2e627006c9c6f7115954d1881cf9e68688459e8e0c4a1809d29a100b54c"
+    },
+    {
+      "path": "src/plugins/builtin-commands/RedoCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；RedoCommand",
+      "lines": 12,
+      "complexity": 2,
+      "sha256": "57db9b02604c685ffa07339a262e1818dc25f7efd55c54327e505143bab16760"
+    },
+    {
+      "path": "src/plugins/builtin-commands/SaveCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；SaveCommand",
+      "lines": 26,
+      "complexity": 5,
+      "sha256": "436953c6bafc49c24949a7eb630e7f19e0d68765a52256d89f981e0c9e74d2b0"
+    },
+    {
+      "path": "src/plugins/builtin-commands/ScaleCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；ScaleCommand",
+      "lines": 26,
+      "complexity": 5,
+      "sha256": "11d18529c2b0a37ca4ebffa43ecff1e80329c6dc4c72d3b172199353464901b3"
+    },
+    {
+      "path": "src/plugins/builtin-commands/SetCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；SetCommand",
+      "lines": 31,
+      "complexity": 4,
+      "sha256": "daad27424041092213d7e0bfdaf7b641ec4e02dbe36b9b2ad7a1424cb527e15e"
+    },
+    {
+      "path": "src/plugins/builtin-commands/ShowCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；ShowCommand",
+      "lines": 16,
+      "complexity": 2,
+      "sha256": "5c4a0500aaa8e224265c37561b4dcc0ba6e105e70b38f95c03b7890a8d980ca2"
+    },
+    {
+      "path": "src/plugins/builtin-commands/TreeCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；TreeCommand",
+      "lines": 14,
+      "complexity": 2,
+      "sha256": "e384061bfb0d6e8de6b39254d7cf24889fe9466425bcbed3b03488cea8d2eae0"
+    },
+    {
+      "path": "src/plugins/builtin-commands/UndoCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；UndoCommand",
+      "lines": 12,
+      "complexity": 2,
+      "sha256": "86d4fbe993680d97957b5b6123f58843a66b0e07d14dcffedc83d9005f0487f2"
+    },
+    {
+      "path": "src/plugins/builtin-commands/UngroupCommand.ts",
+      "category": "插件",
+      "responsibilities": "默认 CLI 命令参数、执行、撤销反馈或注册；UngroupCommand",
+      "lines": 18,
+      "complexity": 3,
+      "sha256": "fa76d433f7a5309c89715429b4f3342384eb68cce15d7ec4c1247451c37c9f46"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/BuiltinShapeProvider.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；BuiltinShapeProvider",
+      "lines": 44,
+      "complexity": 25,
+      "sha256": "848852258a9afd1bff50a2f3a009d1ae54b5234c80af648a18e8878de32c1fc0"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/BuiltinShapesPlugin.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；BuiltinShapesPlugin",
+      "lines": 29,
+      "complexity": 9,
+      "sha256": "d0d54ca8693137eb5dcb40ea34a242e7d132f3c07fe3cc94c55db12031727223"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/CircleShape.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；CircleShape",
+      "lines": 82,
+      "complexity": 16,
+      "sha256": "95e91c262f30dbc2ee078ddf7ede526d5ab9a16f36ed37778f7d19a35f4fc6ee"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/EllipseShape.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；EllipseShape",
+      "lines": 93,
+      "complexity": 17,
+      "sha256": "00964d855ef28e8e4700472ff58da5729b277019631941105f9f1f1246542f8a"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/LineShape.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；LineShape",
+      "lines": 91,
+      "complexity": 16,
+      "sha256": "fcf184c1ebcad51c9f84753989230cf15d93a1f97cb5478a027f05673d84989e"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/RectShape.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；RectShape",
+      "lines": 93,
+      "complexity": 17,
+      "sha256": "ed74387500ca455f25bdff2fad7c68ef365adf30e16b6054ff97bdd51e0e15c0"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/TextShape.ts",
+      "category": "插件",
+      "responsibilities": "默认图形的几何、属性、克隆及类型注册；TextShape",
+      "lines": 88,
+      "complexity": 18,
+      "sha256": "4d748cf54b07495dd6a60741f45f921b108891f2ec277d28da5604505941d42c"
+    },
+    {
+      "path": "src/plugins/dir/DirCommand.ts",
+      "category": "插件",
+      "responsibilities": "通过目录端口提供稳定的目录查询；DirCommand",
+      "lines": 24,
+      "complexity": 13,
+      "sha256": "bcc98530f5a2b2fbe59d5397480181ddb1d36d8286f8917363e199c1c3e4cc71"
+    },
+    {
+      "path": "src/plugins/dir/DirPlugin.ts",
+      "category": "插件",
+      "responsibilities": "通过目录端口提供稳定的目录查询；DirPlugin",
+      "lines": 7,
+      "complexity": 2,
+      "sha256": "38c3d840a72367ea2e1595a7bb0e50b9ff6705c8b16893a9a2a6b20c40225348"
+    },
+    {
+      "path": "src/plugins/modified-star/ModifiedStar.ts",
+      "category": "插件",
+      "responsibilities": "保存基线、dirty 指纹与行尾标签；ModifiedStar",
+      "lines": 26,
+      "complexity": 10,
+      "sha256": "2600e2c20b3dfd6b95a5d2093cd294a183dd3dbe58dd0ce287f93981f0cf9264"
+    },
+    {
+      "path": "src/plugins/modified-star/ModifiedStarPlugin.ts",
+      "category": "插件",
+      "responsibilities": "保存基线、dirty 指纹与行尾标签；ModifiedStarPlugin",
+      "lines": 6,
+      "complexity": 1,
+      "sha256": "196c1537a945ef3fa24e80b91bc469ad85eb85eda68c5edee22556d150d77e26"
+    },
+    {
+      "path": "src/plugins/shape-box/BoxAttributes.ts",
+      "category": "插件",
+      "responsibilities": "复合图形、必要部件、属性传播及类型标签；BoxAttributes",
+      "lines": 12,
+      "complexity": 6,
+      "sha256": "3b8823120ee51758b65eb1fdcb59ea50b757995493a6bf6db42a9335a37164e5"
+    },
+    {
+      "path": "src/plugins/shape-box/BoxPlugin.ts",
+      "category": "插件",
+      "responsibilities": "复合图形、必要部件、属性传播及类型标签；BoxPlugin",
+      "lines": 18,
+      "complexity": 7,
+      "sha256": "1454fa3629712ea995a1696ffcf5fac937e58069ef18fef5af09381ff683f234"
+    },
+    {
+      "path": "src/plugins/shape-box/BoxProvider.ts",
+      "category": "插件",
+      "responsibilities": "复合图形、必要部件、属性传播及类型标签；BoxProvider",
+      "lines": 22,
+      "complexity": 16,
+      "sha256": "c17be3457b83c78a35ee6ee8c8f461d757483dde20ad1145a10b8e548d7993d1"
+    },
+    {
+      "path": "src/plugins/shape-box/BoxShape.ts",
+      "category": "插件",
+      "responsibilities": "复合图形、必要部件、属性传播及类型标签；BoxShape",
+      "lines": 30,
+      "complexity": 14,
+      "sha256": "f2f14bc87394cb8666d07fc542ba98ba889bdc414125629b4b7b775a06d02d83"
+    },
+    {
+      "path": "src/plugins/shape-box/BoxTypeLabel.ts",
+      "category": "插件",
+      "responsibilities": "复合图形、必要部件、属性传播及类型标签；BoxTypeLabel",
+      "lines": 8,
+      "complexity": 2,
+      "sha256": "2d0b840eb818f9418c4c3527cf679ee57b17b8cdac0fdba3d8812f248b461242"
+    },
+    {
+      "path": "src/plugins/stats/StatsCommand.ts",
+      "category": "插件",
+      "responsibilities": "只读深度优先图形统计；StatsCommand",
+      "lines": 27,
+      "complexity": 8,
+      "sha256": "392c7d0d646b138d37e674f2250d1549e981340a9a96fdc86724f88c606b1c8c"
+    },
+    {
+      "path": "src/plugins/stats/StatsPlugin.ts",
+      "category": "插件",
+      "responsibilities": "只读深度优先图形统计；StatsPlugin",
+      "lines": 6,
+      "complexity": 1,
+      "sha256": "16dd333a5b35a554ac771ae8aa449b9c7940b5b8cfbb70ebc782b126cc570bb8"
+    }
+  ],
+  "manifests": [
+    {
+      "path": "extensions/vscode-svg/package.json",
+      "lines": 23,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "package.json",
+      "lines": 49,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "plugins.config.json",
+      "lines": 8,
+      "responsibilities": "配置装配的插件选择、顺序和 options"
+    },
+    {
+      "path": "src/plugins/builtin-commands/package.json",
+      "lines": 6,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "src/plugins/builtin-shapes/package.json",
+      "lines": 6,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "src/plugins/dir/package.json",
+      "lines": 6,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "src/plugins/modified-star/package.json",
+      "lines": 6,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "src/plugins/shape-box/package.json",
+      "lines": 6,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    },
+    {
+      "path": "src/plugins/stats/package.json",
+      "lines": 6,
+      "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
+    }
+  ]
+}

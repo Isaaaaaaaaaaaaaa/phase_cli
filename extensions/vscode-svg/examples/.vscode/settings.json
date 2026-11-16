@@ -1,0 +1,6 @@
+{
+  "workbench.editorAssociations": { "*.svg": "default" },
+  "outline.expandMode": "alwaysExpand",
+  "workbench.startupEditor": "none",
+  "chat.commandCenter.enabled": false
+}

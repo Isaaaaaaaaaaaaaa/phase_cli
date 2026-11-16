@@ -1,0 +1,6 @@
+{
+  "name": "@svgframe/builtin-shapes",
+  "type": "module",
+  "main": "../../../dist/plugins/builtin-shapes/BuiltinShapesPlugin.js",
+  "contributes": { "shapes": ["rect", "circle", "ellipse", "line", "text", "g"] }
+}

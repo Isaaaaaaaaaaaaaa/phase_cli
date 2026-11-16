@@ -2,7 +2,7 @@ import type { Shape } from "../../domain/shapes/Shape.js";
 
 export class ShapeRenderer {
   public render(shape: Shape, parent: string): readonly string[] {
-    const lines = [`${shape.tagName}#${shape.id}  parent=${parent}`];
+    const lines = [`${shape.typeName}#${shape.id}  parent=${parent}`];
     for (const detail of shape.geometryDetails().split("\n")) {
       lines.push(`  ${detail.trimStart()}`);
     }

@@ -1,0 +1,24 @@
+/** Supported plugin API. Imports outside this facade are kernel-private. */
+export { EditorError } from "./domain/EditorError.js";
+export { Shape, type ShapeOptions } from "./domain/shapes/Shape.js";
+export { GroupShape } from "./domain/shapes/GroupShape.js";
+export { SvgDocument } from "./domain/SvgDocument.js";
+export { ShapeFactory } from "./domain/ShapeFactory.js";
+export { EditorSession } from "./application/EditorSession.js";
+export { HistoryManager } from "./application/HistoryManager.js";
+export { SvgEditor } from "./application/SvgEditor.js";
+export { SnapshotCommand } from "./application/commands/SnapshotCommand.js";
+export type { EditorCommand, ReversibleCommand, IoCommand } from "./application/commands/EditorCommand.js";
+export type { SvgRepository, ReadResult } from "./application/ports/SvgRepository.js";
+export { ShapeRenderer } from "./application/presentation/ShapeRenderer.js";
+export { TreeRenderer } from "./application/presentation/TreeRenderer.js";
+export type { ShapeProvider, SvgShapeInput } from "./extensions/ShapeProvider.js";
+export type { Command } from "./extensions/Command.js";
+export type { TreeDecorator, EditorEvent } from "./extensions/TreeDecorator.js";
+export type { AttributeHandler } from "./extensions/AttributeHandler.js";
+export type { Plugin, PluginContext, PluginManifest } from "./extensions/Plugin.js";
+export type { CommandToken } from "./extensions/Command.js";
+export { ExtensionRegistry } from "./extensions/ExtensionRegistry.js";
+export type { CommandCategory } from "./application/commands/EditorCommand.js";
+export type { PluginServices } from "./extensions/PluginServices.js";
+export type { DirectoryReader, DirectoryEntry } from "./application/ports/DirectoryReader.js";

@@ -1,0 +1,67 @@
+[
+  {
+    "name": "stats-dir",
+    "commit": "dfc3120",
+    "plugin": "src/plugins/dir",
+    "additionalPlugin": "src/plugins/stats",
+    "assembly": "src/host/CodeAssembly.ts",
+    "checkedExistingPaths": [
+      "src/domain",
+      "src/application",
+      "src/extensions",
+      "src/cli",
+      "src/host/loading"
+    ],
+    "kernelUnchanged": true,
+    "existingPluginsUnchanged": true,
+    "nameStatus": "A\tdocs/metrics/README.md\nA\tdocs/metrics/metrics.json\nA\tplugins.config.json\nM\tsrc/host/CodeAssembly.ts\nA\tsrc/plugins/dir/DirCommand.ts\nA\tsrc/plugins/dir/DirPlugin.ts\nA\tsrc/plugins/dir/package.json\nA\tsrc/plugins/stats/StatsCommand.ts\nA\tsrc/plugins/stats/StatsPlugin.ts\nA\tsrc/plugins/stats/package.json\nA\ttests/command-plugins.test.ts"
+  },
+  {
+    "name": "box-code",
+    "commit": "e0514f3",
+    "plugin": "src/plugins/shape-box",
+    "assembly": "src/host/CodeAssembly.ts",
+    "checkedExistingPaths": [
+      "src/domain",
+      "src/application",
+      "src/extensions",
+      "src/cli",
+      "src/host/loading"
+    ],
+    "kernelUnchanged": true,
+    "existingPluginsUnchanged": true,
+    "nameStatus": "M\tsrc/host/CodeAssembly.ts\nA\tsrc/plugins/shape-box/BoxAttributes.ts\nA\tsrc/plugins/shape-box/BoxPlugin.ts\nA\tsrc/plugins/shape-box/BoxProvider.ts\nA\tsrc/plugins/shape-box/BoxShape.ts\nA\tsrc/plugins/shape-box/BoxTypeLabel.ts\nA\tsrc/plugins/shape-box/package.json\nA\ttests/box.test.ts"
+  },
+  {
+    "name": "box-config",
+    "commit": "941145a",
+    "plugin": "src/plugins/shape-box",
+    "assembly": "plugins.config.json",
+    "checkedExistingPaths": [
+      "src/domain",
+      "src/application",
+      "src/extensions",
+      "src/cli",
+      "src/host/loading"
+    ],
+    "kernelUnchanged": true,
+    "existingPluginsUnchanged": true,
+    "nameStatus": "M\tplugins.config.json\nA\tsrc/plugins/shape-box/BoxAttributes.ts\nA\tsrc/plugins/shape-box/BoxPlugin.ts\nA\tsrc/plugins/shape-box/BoxProvider.ts\nA\tsrc/plugins/shape-box/BoxShape.ts\nA\tsrc/plugins/shape-box/BoxTypeLabel.ts\nA\tsrc/plugins/shape-box/package.json\nA\ttests/box.test.ts"
+  },
+  {
+    "name": "modified-star",
+    "commit": "a70d30d",
+    "plugin": "src/plugins/modified-star",
+    "assembly": "src/host/CodeAssembly.ts",
+    "checkedExistingPaths": [
+      "src/domain",
+      "src/application",
+      "src/extensions",
+      "src/cli",
+      "src/host/loading"
+    ],
+    "kernelUnchanged": true,
+    "existingPluginsUnchanged": true,
+    "nameStatus": "A\tdoc/transcript/box.txt\nA\tdoc/transcript/plugins.txt\nM\tplugins.config.json\nM\tsrc/host/CodeAssembly.ts\nA\tsrc/plugins/modified-star/ModifiedStar.ts\nA\tsrc/plugins/modified-star/ModifiedStarPlugin.ts\nA\tsrc/plugins/modified-star/package.json\nA\ttests/decorators.test.ts"
+  }
+]

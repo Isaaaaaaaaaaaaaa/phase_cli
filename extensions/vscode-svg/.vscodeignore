@@ -1,0 +1,7 @@
+.vscode-test/**
+.vscode/**
+src/**
+scripts/**
+tsconfig.json
+package-lock.json
+dist/hostTests.js

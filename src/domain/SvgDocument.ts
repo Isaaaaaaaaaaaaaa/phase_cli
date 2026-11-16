@@ -51,6 +51,8 @@ export class SvgDocument {
     return this.allShapes().length;
   }
 
+  public walk(): readonly Shape[] { return this.allShapes(); }
+
   public find(id: string): Shape | undefined {
     return this.locate(id)?.shape;
   }
@@ -96,6 +98,7 @@ export class SvgDocument {
     if (location === undefined) {
       throw new EditorError(`no such shape: ${id}`);
     }
+    location.parent?.assertCanDetach(id);
     if (location.parent === undefined) {
       const [removed] = this.rootShapes.splice(location.index, 1);
       if (removed !== undefined) {
@@ -110,7 +113,7 @@ export class SvgDocument {
     throw new EditorError(`no such shape: ${id}`);
   }
 
-  public group(newId: string, ids: readonly string[]): GroupShape {
+  public group(newId: string, ids: readonly string[], group = new GroupShape(newId)): GroupShape {
     if (ids.length === 0) {
       throw new EditorError("group requires at least one shape");
     }
@@ -139,8 +142,9 @@ export class SvgDocument {
     const ordered = [...selected].sort(
       (left, right) => (order.get(left.id) ?? 0) - (order.get(right.id) ?? 0),
     );
+    for (const shape of ordered) this.locate(shape.id)?.parent?.assertCanDetach(shape.id);
     const children = ordered.map((shape) => this.remove(shape.id));
-    const group = new GroupShape(newId, children);
+    for (const child of children) group.add(child);
     this.rootShapes.push(group);
     return group;
   }
@@ -153,6 +157,7 @@ export class SvgDocument {
     if (!(location.shape instanceof GroupShape)) {
       throw new EditorError(`not a container: ${id}`);
     }
+    location.shape.assertCanUngroup();
     if (location.parent === undefined) {
       throw new EditorError(`cannot ungroup top-level container: ${id}`);
     }

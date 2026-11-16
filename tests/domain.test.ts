@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { ShapeFactory } from "../src/domain/ShapeFactory.js";
+import { EditorHost } from "../src/host/EditorHost.js";
 import { GroupShape } from "../src/domain/shapes/GroupShape.js";
-import { RectShape } from "../src/domain/shapes/RectShape.js";
+import { RectShape } from "../src/plugins/builtin-shapes/RectShape.js";
 import { SvgDocument } from "../src/domain/SvgDocument.js";
 
 describe("SVG domain model", () => {
@@ -70,7 +70,7 @@ describe("SVG domain model", () => {
   });
 
   it("uses the factory as the only type-name dispatch point", () => {
-    const factory = new ShapeFactory();
+    const factory = new EditorHost().services.shapeFactory;
     const line = factory.create("line", "l1", ["0", "1", "2", "3", "red"]);
     expect(line.summary()).toBe("line#l1 (0,1) -> (2,3) stroke=red");
     line.move(2, 3);
@@ -92,7 +92,7 @@ describe("SVG domain model", () => {
   });
 
   it("applies polymorphic geometry and attribute behavior to every shape", () => {
-    const factory = new ShapeFactory();
+    const factory = new EditorHost().services.shapeFactory;
     const rect = factory.create("rect", "r", ["1", "2", "3", "4"]);
     const circle = factory.create("circle", "c", ["1", "2", "3", "red"]);
     const ellipse = factory.create("ellipse", "e", ["1", "2", "3", "4"]);

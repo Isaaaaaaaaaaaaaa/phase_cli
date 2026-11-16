@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    { "module": "./src/plugins/stats" },
+    { "module": "./src/plugins/dir" },
+    { "module": "./src/plugins/shape-box" },
+    { "module": "./src/plugins/modified-star" }
+  ]
+}

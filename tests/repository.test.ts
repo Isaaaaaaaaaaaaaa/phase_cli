@@ -7,7 +7,7 @@ import {
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
-import { ShapeFactory } from "../src/domain/ShapeFactory.js";
+import { EditorHost } from "../src/host/EditorHost.js";
 import { FileSvgRepository } from "../src/infrastructure/FileSvgRepository.js";
 import { TestHarness } from "./TestHarness.js";
 
@@ -39,7 +39,7 @@ describe("SVG file repository", () => {
       ].join("\n"),
       "utf8",
     );
-    const repository = new FileSvgRepository(new ShapeFactory());
+    const repository = new FileSvgRepository(new EditorHost().services.shapeFactory);
 
     const result = repository.read(inputPath);
     expect(result.warnings).toEqual([
@@ -71,7 +71,7 @@ describe("SVG file repository", () => {
       dimensionPath,
       '<svg width="bad" height="10"><rect id="x" x="0" y="0" width="1" height="1"/></svg>',
     );
-    const repository = new FileSvgRepository(new ShapeFactory());
+    const repository = new FileSvgRepository(new EditorHost().services.shapeFactory);
 
     expect(() => repository.read(duplicatePath)).toThrow(
       "id already exists: x",
