@@ -6,7 +6,9 @@
   "files": [
     "dist",
     "doc",
-    "plugins.config.json"
+    "docs",
+    "plugins.config.json",
+    "src/plugins/**/package.json"
   ],
   "bin": {
     "svg-editor": "dist/cli/SvgCli.js"
@@ -21,6 +23,8 @@
     "test:vscode": "npm --prefix extensions/vscode-svg run test:host",
     "test:dsh": "npm --prefix integrations/dsh-svg test",
     "verify:assembly": "npm run build && node scripts/verify-assembly.mjs && node scripts/verify-ocp.mjs",
+    "verify:baseline": "npm run build && node scripts/verify-baseline.mjs",
+    "prepack": "npm run build",
     "metrics": "node scripts/metrics.mjs"
   },
   "engines": {

@@ -46,7 +46,10 @@ export class ExtensionRegistry implements PluginContext {
     for (const decorator of staged.tables.decorators.values()) this.registerDecorator(decorator);
   }
   public setAttribute(document: SvgDocument, shape: Shape, attr: string, value: string): string | undefined {
-    const fingerprint = (): string => JSON.stringify(document.walk().map((node) => [node.id, node.svgAttributes(), node.textContent, node.children.map((child) => child.id)]));
+    const fingerprint = (): string => JSON.stringify([
+      document.width, document.height,
+      document.walk().map((node) => [node.id, node.svgAttributes(), node.textContent, node.children.map((child) => child.id)]),
+    ]);
     const before = fingerprint();
     const matches = [...this.tables.attributes.values()].filter((handler) => {
       const handled = handler.handles(shape, attr);

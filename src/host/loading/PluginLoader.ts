@@ -19,7 +19,7 @@ export class PluginLoader {
         void activation.catch(() => {});
         throw new Error("activate must be synchronous");
       }
-      const declared = categories.map((category) => `${category}=${[...(manifest.contributes?.[category] ?? [])].sort().join(",")}`).join("; ");
+      const declared = categories.map((category) => `${category}=${[...new Set(manifest.contributes?.[category] ?? [])].sort().join(",")}`).join("; ");
       const registered = categories.map((category) => `${category}=${staged.names(category).join(",")}`).join("; ");
       if (declared !== registered) {
         return [`error: plugin manifest mismatch: ${manifest.name} (declared: ${declared}, registered: ${registered})`];

@@ -74,8 +74,11 @@ class GitMetrics {
       });
   }
   run() {
+    const targetRef = process.argv[2] ?? "HEAD";
+    const baselineCommit = this.git("rev-parse", "final^{}").trim();
+    const targetCommit = this.git("rev-parse", `${targetRef}^{commit}`).trim();
     const baseline = this.inventory("final");
-    const target = this.inventory(process.argv[2] ?? "HEAD");
+    const target = this.inventory(targetCommit);
     const totals = (rows) => ["内核", "装配处", "插件", "VSCode"].map((category) => {
       const selected = rows.filter((row) => row.category === category);
       return { category, files: selected.length,
@@ -83,8 +86,9 @@ class GitMetrics {
         complexity: selected.reduce((sum, row) => sum + row.complexity, 0) };
     });
     const result = { rule: "TypeScript physical LOC, AST function CC=1 + if/loops/case/catch/ternary/&&/||/??; nested functions counted separately; tests/dependencies/build outputs excluded; JSON manifests listed separately and excluded from executable-code totals",
+      baselineRef: "final", baselineCommit, targetRef, targetCommit,
       final: totals(baseline), phase2: totals(target), baseline, target,
-      manifests: this.manifests(process.argv[2] ?? "HEAD") };
+      manifests: this.manifests(targetCommit) };
     mkdirSync("docs/metrics", { recursive: true });
     writeFileSync("docs/metrics/metrics.json", JSON.stringify(result, null, 2) + "\n");
     const table = result.phase2.map((row) => {
@@ -93,7 +97,7 @@ class GitMetrics {
     }).join("\n");
     const files = target.map((row) => `| ${row.path} | ${row.category} | ${row.responsibilities} | ${row.lines} | ${row.complexity} |`).join("\n");
     const manifests = result.manifests.map((row) => `| ${row.path} | ${row.responsibilities} | ${row.lines} |`).join("\n");
-    writeFileSync("docs/metrics/README.md", `# 自动生成指标\n\n运行 \`node scripts/metrics.mjs p2\`。基线为 \`final\`。所有源文件读取 Git 历史；数字不可手改。\n\n口径：${result.rule}\n\nVSCode 单独列出，不混入 CLI 增量。\n\n| 分类 | 文件数 final → Phase 2 | 行数 | 圈复杂度 | 复杂度增量 |\n| --- | --- | --- | --- | --- |\n${table}\n\n## 文件清单与职责\n\n职责由目录职责规则与 AST 中的类/接口名生成。\n\n| 文件 | 分类 | 类/接口职责 | 行数 | 复杂度 |\n| --- | --- | --- | --- | --- |\n${files}\n\n## 运行配置与贡献清单\n\n配置文件从同一 Git 引用读取，单独列出，不混入 TypeScript 可执行代码复杂度。\n\n| 文件 | 职责 | 行数 |\n| --- | --- | --- |\n${manifests}\n`);
+    writeFileSync("docs/metrics/README.md", `# 架构指标\n\n生成：\`node scripts/metrics.mjs ${targetRef}\`。\n\n基线：\`final\`（${baselineCommit.slice(0, 7)}）；统计提交：\`${targetCommit.slice(0, 7)}\`。\n\n脚本从 Git 历史解析 TypeScript AST，按模块职责分类。物理行数包含注释和空行；函数圈复杂度从 1 起算，if、循环、case、catch、三元表达式及 && / || / ?? 各增加 1。嵌套函数独立计数。依赖、测试和构建产物排除。\n\nVSCode 单列；JSON 清单另列。\n\n| 分类 | 文件数 final → 统计提交 | 行数 | 圈复杂度 | 复杂度增量 |\n| --- | --- | --- | --- | --- |\n${table}\n\n## 文件清单与职责\n\n| 文件 | 分类 | 职责 | 行数 | 复杂度 |\n| --- | --- | --- | --- | --- |\n${files}\n\n## 运行配置与贡献清单\n\n| 文件 | 职责 | 行数 |\n| --- | --- | --- |\n${manifests}\n`);
     console.log("Historical metrics generated:", target.length, "source files");
   }
 }

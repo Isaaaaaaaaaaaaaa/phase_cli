@@ -1,5 +1,8 @@
 import type { EditorCommand } from "../application/commands/EditorCommand.js";
-import type { CommandToken } from "../cli/CommandTokenizer.js";
+export interface CommandToken {
+  readonly value: string;
+  readonly quoted: boolean;
+}
 
 export interface Command {
   readonly name: string;

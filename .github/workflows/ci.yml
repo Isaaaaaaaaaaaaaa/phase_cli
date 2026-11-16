@@ -16,6 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run verify:baseline
       - run: node scripts/verify-assembly.mjs
       - run: node scripts/verify-ocp.mjs
       - run: npm --prefix integrations/dsh-svg ci

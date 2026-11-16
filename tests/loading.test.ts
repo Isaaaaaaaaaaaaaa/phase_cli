@@ -26,6 +26,13 @@ describe("plugin registration transaction", () => {
     expect(host.run("sample")).toEqual(["query result"]);
     expect(host.run("help")).toContain("  sample");
   });
+  it("compares contributes as name sets", () => {
+    const host = new EditorHost();
+    expect(host.loader.install(new SamplePlugin(), {
+      name: "name-set", contributes: { commands: ["sample", "sample"] },
+    })).toEqual([]);
+    expect(host.run("sample")).toEqual(["query result"]);
+  });
   it("rolls back manifest mismatch and partial throwing activation", () => {
     const host = new EditorHost();
     const mismatch = host.loader.install(new SamplePlugin(), { name: "bad", contributes: { commands: ["wrong"] } });

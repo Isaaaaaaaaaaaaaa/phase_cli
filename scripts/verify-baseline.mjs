@@ -1,13 +1,19 @@
 import { execFileSync } from "node:child_process";
-import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, writeFileSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { resolve, join } from "node:path";
 import assert from "node:assert/strict";
 
 class BaselineVerification {
   run() {
-    const baseline = process.argv[2];
-    if (!baseline) throw new Error("Pass the built final checkout directory.");
+    let baseline = process.argv[2];
+    if (!baseline) {
+      baseline = mkdtempSync(join(tmpdir(), "svg-final-baseline-"));
+      const archive = execFileSync("git", ["archive", "--format=tar", "final"]);
+      execFileSync("tar", ["-xf", "-", "-C", baseline], { input: archive });
+      symlinkSync(resolve("node_modules"), join(baseline, "node_modules"), "junction");
+      execFileSync(process.execPath, [resolve("node_modules/typescript/bin/tsc"), "-p", join(baseline, "tsconfig.json")], { cwd: baseline });
+    }
     const directory = mkdtempSync(join(tmpdir(), "svg-baseline-session-"));
     writeFileSync(join(directory, "other.svg"), readFileSync("doc/transcript/other.svg"));
     const input = readFileSync("doc/transcript/cli-1.txt", "utf8");

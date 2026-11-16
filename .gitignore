@@ -10,4 +10,6 @@ coverage/
 .vscode-test/
 integrations/dsh-svg/lib/
 *.tgz
+!packages/*.tgz
+!packages/*.vsix
 .DS_Store

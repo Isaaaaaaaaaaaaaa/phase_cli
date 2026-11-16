@@ -1,5 +1,22 @@
 [
   {
+    "name": "stats-dir",
+    "commit": "dfc3120",
+    "plugin": "src/plugins/dir",
+    "additionalPlugin": "src/plugins/stats",
+    "assembly": "src/host/CodeAssembly.ts",
+    "checkedExistingPaths": [
+      "src/domain",
+      "src/application",
+      "src/extensions",
+      "src/cli",
+      "src/host/loading"
+    ],
+    "kernelUnchanged": true,
+    "existingPluginsUnchanged": true,
+    "nameStatus": "A\tdocs/metrics/README.md\nA\tdocs/metrics/metrics.json\nA\tplugins.config.json\nM\tsrc/host/CodeAssembly.ts\nA\tsrc/plugins/dir/DirCommand.ts\nA\tsrc/plugins/dir/DirPlugin.ts\nA\tsrc/plugins/dir/package.json\nA\tsrc/plugins/stats/StatsCommand.ts\nA\tsrc/plugins/stats/StatsPlugin.ts\nA\tsrc/plugins/stats/package.json\nA\ttests/command-plugins.test.ts"
+  },
+  {
     "name": "box-code",
     "commit": "e0514f3",
     "plugin": "src/plugins/shape-box",

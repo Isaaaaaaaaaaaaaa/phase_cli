@@ -17,7 +17,7 @@ export type { Command } from "./extensions/Command.js";
 export type { TreeDecorator, EditorEvent } from "./extensions/TreeDecorator.js";
 export type { AttributeHandler } from "./extensions/AttributeHandler.js";
 export type { Plugin, PluginContext, PluginManifest } from "./extensions/Plugin.js";
-export type { CommandToken } from "./cli/CommandTokenizer.js";
+export type { CommandToken } from "./extensions/Command.js";
 export { ExtensionRegistry } from "./extensions/ExtensionRegistry.js";
 export type { CommandCategory } from "./application/commands/EditorCommand.js";
 export type { PluginServices } from "./extensions/PluginServices.js";
