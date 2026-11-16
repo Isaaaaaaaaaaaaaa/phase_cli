@@ -2,8 +2,8 @@
   "rule": "TypeScript physical LOC, AST function CC=1 + if/loops/case/catch/ternary/&&/||/??; nested functions counted separately; tests/dependencies/build outputs excluded; JSON manifests listed separately and excluded from executable-code totals",
   "baselineRef": "final",
   "baselineCommit": "52958b43cfd62fa576136d62903cfb436aeb18e5",
-  "targetRef": "e96bdca",
-  "targetCommit": "e96bdcae78aa387b9cd37a96fb8026883d722cb6",
+  "targetRef": "deaaacb",
+  "targetCommit": "deaaacbc6fb3fe486bed94656fc4d22b151ed96b",
   "final": [
     {
       "category": "内核",
@@ -1012,7 +1012,7 @@
     },
     {
       "path": "package.json",
-      "lines": 48,
+      "lines": 49,
       "responsibilities": "包入口、兼容条件、依赖元数据和贡献清单"
     },
     {

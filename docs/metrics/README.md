@@ -1,8 +1,8 @@
 # 架构指标
 
-生成：`node scripts/metrics.mjs e96bdca`。
+生成：`node scripts/metrics.mjs deaaacb`。
 
-基线：`final`（52958b4）；统计提交：`e96bdca`。
+基线：`final`（52958b4）；统计提交：`deaaacb`。
 
 脚本从 Git 历史解析 TypeScript AST，按模块职责分类。物理行数包含注释和空行；函数圈复杂度从 1 起算，if、循环、case、catch、三元表达式及 && / || / ?? 各增加 1。嵌套函数独立计数。依赖、测试和构建产物排除。
 
@@ -101,7 +101,7 @@ VSCode 单列；JSON 清单另列。
 | 文件 | 职责 | 行数 |
 | --- | --- | --- |
 | extensions/vscode-svg/package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 23 |
-| package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 48 |
+| package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 49 |
 | plugins.config.json | 配置装配的插件选择、顺序和 options | 8 |
 | src/plugins/builtin-commands/package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 6 |
 | src/plugins/builtin-shapes/package.json | 包入口、兼容条件、依赖元数据和贡献清单 | 6 |
