@@ -2,7 +2,7 @@
 
 高级软件开发技术 Lab1 Phase 2 项目，包含 VSCode SVG 扩展、SVG CLI 插件框架和 DeepSeek Harness SVG 工作台。使用 TypeScript，采用 Command、Composite、Adapter 和 Decorator 模式。
 
-代码仓库：<https://github.com/Isaaaaaaaaaaaaaa/phase_cli_1>。Phase 1 基线为 `final`，Phase 2 提交标签为 `p2`。
+代码仓库：<https://github.com/Isaaaaaaaaaaaaaa/phase_cli>。Phase 1 基线为 `final`，Phase 2 提交标签为 `p2`。
 
 ## 运行
 

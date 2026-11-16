@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./lib/index.js",
   "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/Isaaaaaaaaaaaaaa/phase_cli_1.git", "directory": "integrations/dsh-svg" },
+  "repository": { "type": "git", "url": "https://github.com/Isaaaaaaaaaaaaaa/phase_cli.git", "directory": "integrations/dsh-svg" },
   "keywords": ["dsh-plugin", "svg", "agent", "deepseek"],
   "engines": { "node": ">=24.9.0", "dsh": "0.2.2-rc.3" },
   "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },

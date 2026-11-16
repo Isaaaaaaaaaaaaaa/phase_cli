@@ -1,6 +1,6 @@
 # Lab1 Phase 2：插件实践与插件式重构
 
-本项目实现 VSCode SVG 文件标记与大纲、SVG CLI 插件框架及 DSH SVG 工作台。Phase 1 基线为 `final`，基线仓库为 <https://github.com/Isaaaaaaaaaaaaaa/phase_cli_1>。
+本项目实现 VSCode SVG 文件标记与大纲、SVG CLI 插件框架及 DSH SVG 工作台。Phase 1 基线为 `final`，代码仓库为 <https://github.com/Isaaaaaaaaaaaaaa/phase_cli>。
 
 ## 1. 模块与依赖
 

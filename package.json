@@ -2,6 +2,7 @@
   "name": "svg-editor-cli",
   "version": "0.2.0",
   "description": "A plugin-extensible SVG CLI with VSCode and DSH integrations",
+  "repository": { "type": "git", "url": "https://github.com/Isaaaaaaaaaaaaaa/phase_cli.git" },
   "type": "module",
   "files": [
     "dist",
